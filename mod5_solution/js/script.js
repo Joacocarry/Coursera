@@ -81,10 +81,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
+dc.loadMenuItems('{{randomCategoryShortName}}') = function(){
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] *****
-  ); // Explicitly setting the flag to get JSON from server processed into an object literal
+  );} // Explicitly setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
 
@@ -344,3 +345,4 @@ function insertItemPortionName(html,
 global.$dc = dc;
 
 })(window);
+
