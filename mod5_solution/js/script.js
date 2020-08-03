@@ -102,6 +102,12 @@ dc.loadMenuItems = function (categoryShort) {
     buildAndShowMenuItemsHTML);
 };
 
+  $dc.loadMenuItems({randomCategoryShortName}) = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    allCategoriesUrl,
+    buildAndShowCategoriesHTML);
+};
 
 // Builds HTML for the categories page based on the data
 // from the server
