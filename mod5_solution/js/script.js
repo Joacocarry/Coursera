@@ -102,7 +102,7 @@ dc.loadMenuItems = function (categoryShort) {
     buildAndShowMenuItemsHTML);
 };
 
-  $dc.loadMenuItems({randomCategoryShortName}) = function () {
+dc.loadMenuItems({randomCategoryShortName}) = function () {
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
     allCategoriesUrl,
