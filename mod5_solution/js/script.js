@@ -88,8 +88,8 @@ $ajaxUtils.sendGetRequest(
       .innerHTML = responseText;
   },
   false);
-});
-// *** finish **
+  
+  // *** finish **
 
 // Load the menu categories view
 dc.loadMenuCategories = function () {
@@ -113,10 +113,11 @@ dc.loadMenuItems('{{randomCategoryShortName}}')= function() {
 $ajaxUtils.sendGetRequest(
   showLoading("#main-content");
   allCategoriesUrl,
-  buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
-  true); // Explicitly setting the flag to get JSON from server processed into an object literal
+  buildAndShowHomeHTML // ***** <---- TODO: STEP 1: Substitute [...] ******
+  ); // Explicitly setting the flag to get JSON from server processed into an object literal
 };
 
+});
 
 // Builds HTML for the home page based on categories array
 // returned from the server.
