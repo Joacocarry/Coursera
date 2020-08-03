@@ -80,11 +80,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // *** start ***
 // On first load, show home view
-showLoading("#main-content");
-$ajaxUtils.sendGetRequest(
-  allCategoriesUrl,
-  buildAndShowHomeHTML // ***** <---- TODO: STEP 1: Substitute [...] ******
-  ); // Explicitly setting the flag to get JSON from server processed into an object literal
+showLoading("#main-content"); // Explicitly setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
 
@@ -154,9 +150,13 @@ dc.loadMenuCategories = function () {
 // 'categoryShort' is a short_name for a category
 dc.loadMenuItems = function (categoryShort) {
   showLoading("#main-content");
+//  $ajaxUtils.sendGetRequest(
+ //   menuItemsUrl + categoryShort,
+  //  buildAndShowMenuItemsHTML);
   $ajaxUtils.sendGetRequest(
-    menuItemsUrl + categoryShort,
-    buildAndShowMenuItemsHTML);
+  allCategoriesUrl,
+  buildAndShowHomeHTML // ***** <---- TODO: STEP 1: Substitute [...] ******
+  );
 };
 
 
