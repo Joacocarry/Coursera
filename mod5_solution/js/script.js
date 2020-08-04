@@ -83,9 +83,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
-  buildAndShowHomeHTML,
-  true);// ***** <---- TODO: STEP 1: Substitute [...] ******
-  );};
+  buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
+  ); // Explicitly setting the flag to get JSON from server processed into an object literal
+});
 // *** finish **
 
 
@@ -97,7 +97,7 @@ function buildAndShowHomeHTML (categories) {
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
-    function (homeHtml) {
+    function (homeHtmlToInsertIntoMainPage) {
 
       var chosenCategoryShortName = chooseRandomCategory(categories).short_name;
       
@@ -156,7 +156,7 @@ dc.loadMenuItems = function (categoryShort) {
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
     menuItemsUrl + categoryShort,
-   buildAndShowMenuItemsHTML);
+    buildAndShowMenuItemsHTML);
 };
 
 
@@ -249,9 +249,9 @@ function buildMenuItemsViewHtml(categoryMenuItems,
                                 menuItemHtml) {
 
  // menuItemsTitleHtml =
-   // insertProperty(menuItemsTitleHtml,
-     //              "name",
-       //            categoryMenuItems.category.name);
+ //   insertProperty(menuItemsTitleHtml,
+   //                "name",
+     //              categoryMenuItems.category.name);
   menuItemsTitleHtml =
     insertProperty(menuItemsTitleHtml,
                    "special_instructions",
@@ -342,9 +342,5 @@ function insertItemPortionName(html,
 
 
 global.$dc = dc;
-//
+
 })(window);
-
-
-
-
