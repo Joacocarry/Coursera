@@ -119,6 +119,7 @@ function buildAndShowHomeHTML (categories) {
       //
       // var homeHtmlToInsertIntoMainPage = ....
       //var homeHtmlToInsertIntoMainPage = $dc.loadMenuItems(chosenCategoryShortName);
+      insertProperty("randomCategoryShortName", chosenCategoryShortName);
 
       insertHtml("#main-content", homeHtml);
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
