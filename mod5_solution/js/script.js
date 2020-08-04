@@ -81,13 +81,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-  homeHtml,
-  function (responseText) {
-    document.querySelector("#main-content")
-      .innerHTML = responseText;
-  },
-  false);
+$ajaxUtils.sendGetRequest(
+  allCategoriesUrl,
+  buildAndShowHomeHTML,
+  true);// ***** <---- TODO: STEP 1: Substitute [...] ******
+  );};
 // *** finish **
 
 
@@ -156,13 +154,9 @@ dc.loadMenuCategories = function () {
 // 'categoryShort' is a short_name for a category
 dc.loadMenuItems = function (categoryShort) {
   showLoading("#main-content");
-//  $ajaxUtils.sendGetRequest(
- //   menuItemsUrl + categoryShort,
-  //  buildAndShowMenuItemsHTML);
   $ajaxUtils.sendGetRequest(
-  allCategoriesUrl,
-  buildAndShowHomeHTML // ***** <---- TODO: STEP 1: Substitute [...] ******
-  );
+    menuItemsUrl + categoryShort,
+   buildAndShowMenuItemsHTML);
 };
 
 
